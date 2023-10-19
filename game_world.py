@@ -22,5 +22,7 @@ def render():
 
 # 객체 삭제
 def remove_object(o):
-	for layer in object:
-		layer.remove(o)
+	for layer in objects:
+		if o in layer:
+			layer.remove(o)
+			return
