@@ -1,22 +1,26 @@
 # 게임 월드 관리 모음
 
-#게임 월드의 표현
-objects = []
+# 게임 월드의 표현
+# 두개의 layer를 갖는 게ㅔ임월드로 구현
+objects = [[],[]]
 
 # 월드에 객체를 넣는 함수
-def add_object(o):
-	objects.append(o)
+def add_object(o, depth):
+	objects[depth].append(o)
 
 # 월드를 업데이트하는, 객체들을 모두 업데이트함
 def update():
-	for o in objects:
-		o.update()
+	for layer in objects:
+		for o in layer:
+			o.update()
 
 # 월드 객체들을 모두 그리기
 def render():
-	for o in objects:
-		o.draw()
+	for layer in objects:
+		for o in layer:
+			o.draw()
 
-## 객체 삭제
+# 객체 삭제
 def remove_object(o):
-	objects.remove(o)
+	for layer in object:
+		layer.remove(o)
